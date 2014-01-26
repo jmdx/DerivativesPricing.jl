@@ -5,13 +5,13 @@ export Option, VanillaCallOption, payoff
 abstract Option
 
 type VanillaCallOption <: Option
-	expiry
-	strike
+    expiry
+    strike
 end
 
 type VanillaPutOption <: Option
-	expiry
-	strike
+    expiry
+    strike
 end
 
 payoff(option::VanillaCallOption, spot_price) = max(spot_price - option.strike, 0)
