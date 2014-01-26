@@ -3,14 +3,9 @@ module SimpleMC
 using ..InstrumentTypes
 export get_option_price
 
-function get_option_price(
-        option,
-        spot::Number,
-        volatility::Number,
-        r::Number,
-        num_paths::Number)
-	expiry = option.expiry
-	strike = option.strike
+function get_option_price(option,spot,volatility,r,num_paths)
+    expiry = option.expiry
+    strike = option.strike
     variance = volatility * volatility * expiry
     root_variance = sqrt(variance)
     ito_correction = -0.5 * variance
